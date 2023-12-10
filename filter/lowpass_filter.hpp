@@ -1,6 +1,6 @@
+#ifndef HCA_LOWPASS_FILTER_HPP
+#define HCA_LOWPASS_FILTER_HPP
 
-#ifndef LOWPASS_FILTER_HPP
-#define LOWPASS_FILTER_HPP
 #include "filter_interface.hpp"
 
 class LowpassFilter : FilterInterface{
@@ -15,4 +15,4 @@ public:
     float get() override;
     void reset();
 };
-#endif //LOWPASS_FILTER_HPP
+#endif // HCA_LOWPASS_FILTER_HPP

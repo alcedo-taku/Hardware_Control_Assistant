@@ -1,5 +1,6 @@
-#ifndef MOVING_AVERAGE_FILTER_HPP_
-#define MOVING_AVERAGE_FILTER_HPP_
+#ifndef HCA_MOVING_AVERAGE_FILTER_HPP_
+#define HCA_MOVING_AVERAGE_FILTER_HPP_
+
 #include <queue>
 #include <cstdint>
 #include "filter_interface.hpp"
@@ -50,4 +51,4 @@ public:
     void reset();
 };
 
-#endif//MOVING_AVERAGE_FILTER_HPP_
+#endif // HCA_MOVING_AVERAGE_FILTER_HPP_
