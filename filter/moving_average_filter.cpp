@@ -14,7 +14,7 @@ void  MovingAverageFilter::init(float work_frequency, float cut_off_frequency) {
 }
 
 void MovingAverageFilter::update(float value) {
-    average_queue.shift(-1);
+    average_queue = average_queue.shift(-1); // データを右シフト
     average_queue[0] = value;
     filtered_value = average_queue.sum() / number;
 }
