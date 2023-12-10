@@ -3,6 +3,8 @@
 
 #include "filter_interface.hpp"
 
+namespace hca {
+
 class LowpassFilter : FilterInterface{
 private:
     float ratio;
@@ -15,4 +17,7 @@ public:
     float get() override;
     void reset();
 };
+
+} // namespace hca
+
 #endif // HCA_LOWPASS_FILTER_HPP

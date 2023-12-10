@@ -1,5 +1,7 @@
 #include "moving_average_filter.hpp"
 
+namespace hca {
+
 MovingAverageFilter::MovingAverageFilter() {}
 
 void MovingAverageFilter::init(uint16_t number) {
@@ -24,3 +26,5 @@ float MovingAverageFilter::get() {
 void MovingAverageFilter::reset() {
     average_queue = std::valarray<float> (0.0, number);
 }
+
+} // namespace hca

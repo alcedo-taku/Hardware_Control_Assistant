@@ -1,6 +1,8 @@
 #include "lowpass_filter.hpp"
 #include <cmath>
 
+namespace hca {
+
 LowpassFilter::LowpassFilter() {}
 
 void LowpassFilter::init(float ratio) {
@@ -30,3 +32,5 @@ float LowpassFilter::get() {
 void LowpassFilter::reset() {
     filtered_value = 0;
 }
+
+} // namespace hca

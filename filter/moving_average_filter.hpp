@@ -5,6 +5,8 @@
 #include <valarray>
 #include "filter_interface.hpp"
 
+namespace hca {
+
 class MovingAverageFilter : FilterInterface{
 private:
     uint16_t number;
@@ -18,5 +20,7 @@ public:
     float get() override;
     void reset();
 };
+
+} // namespace hca
 
 #endif // HCA_MOVING_AVERAGE_FILTER_HPP_
