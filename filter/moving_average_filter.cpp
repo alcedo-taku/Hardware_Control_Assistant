@@ -4,6 +4,7 @@ MovingAverageFilter::MovingAverageFilter() {}
 
 void MovingAverageFilter::init(uint16_t number) {
     this->number = number;
+    average_queue = std::valarray<float> (0.0, number);
 }
 
 void  MovingAverageFilter::init(float work_frequency, float cut_off_frequency) {
@@ -11,18 +12,15 @@ void  MovingAverageFilter::init(float work_frequency, float cut_off_frequency) {
 }
 
 void MovingAverageFilter::update(float value) {
-    if(number < averageQueue.size()){
-        averageQueue.pop();
-    }
-    averageQueue.push(value);
-
-    filteredValue = averageQueue.getAverage();
+    average_queue.shift(-1);
+    average_queue[0] = value;
+    filtered_value = average_queue.sum() / number;
 }
 
 float MovingAverageFilter::get() {
-    return  filteredValue;
+    return  filtered_value;
 }
 
 void MovingAverageFilter::reset() {
-    averageQueue.reset();
+    average_queue = std::valarray<float> (0.0, number);
 }

@@ -6,14 +6,12 @@ LowpassFilter::LowpassFilter() {}
 void LowpassFilter::init(float ratio) {
     if(ratio < 0){
         ratio = 0;
-    }
-    if(1 < ratio){
+    } else if(1 < ratio){
         ratio = 1;
     }
-
     this->ratio = ratio;
 }
-void LowpassFilter::init(float work_frequency, float cut_off_frequency) {
+void LowpassFilter::init(const float work_frequency, float cut_off_frequency) {
     if(work_frequency/2 < cut_off_frequency){
         cut_off_frequency = work_frequency/2;
     }
@@ -22,7 +20,7 @@ void LowpassFilter::init(float work_frequency, float cut_off_frequency) {
     init(ratio);
 }
 
-void LowpassFilter::update(float value) {
+void LowpassFilter::update(const float value) {
     filtered_value = value*ratio + (1 - ratio)*filtered_value;
 }
 

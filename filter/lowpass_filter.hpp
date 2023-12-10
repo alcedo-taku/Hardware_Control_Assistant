@@ -10,8 +10,8 @@ private:
 public:
     LowpassFilter();
     void init(float ratio);
-    void init(float work_frequency, float cut_off_frequency) override;
-    void update(float value)override;
+    void init(const float work_frequency, float cut_off_frequency) override;
+    void update(const float value) override;
     float get() override;
     void reset();
 };
