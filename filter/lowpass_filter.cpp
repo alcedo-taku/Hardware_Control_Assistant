@@ -26,9 +26,6 @@ void LowpassFilter::update(const float value) {
     filtered_value = value*ratio + (1 - ratio)*filtered_value;
 }
 
-float LowpassFilter::get() {
-    return filtered_value;
-}
 void LowpassFilter::reset() {
     filtered_value = 0;
 }

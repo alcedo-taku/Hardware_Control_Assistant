@@ -19,10 +19,6 @@ void MovingAverageFilter::update(float value) {
     filtered_value = average_queue.sum() / number;
 }
 
-float MovingAverageFilter::get() {
-    return  filtered_value;
-}
-
 void MovingAverageFilter::reset() {
     average_queue = std::valarray<float> (0.0, number);
 }

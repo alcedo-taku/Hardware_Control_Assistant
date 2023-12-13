@@ -4,9 +4,12 @@
 namespace hca {
 
 class FilterInterface {
+protected:
+    float filtered_value;
+public:
 	virtual void init(float work_frequency, float cut_off_frequency) = 0;
     virtual void update(float value) = 0;
-    virtual float get() = 0;
+    float get() { return filtered_value; }
 };
 
 } // namespace hca

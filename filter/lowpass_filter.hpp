@@ -5,16 +5,14 @@
 
 namespace hca {
 
-class LowpassFilter : FilterInterface{
+class LowpassFilter : public FilterInterface{
 private:
     float ratio;
-    float filtered_value;
 public:
     LowpassFilter();
     void init(float ratio);
     void init(const float work_frequency, float cut_off_frequency) override;
     void update(const float value) override;
-    float get() override;
     void reset();
 };
 
