@@ -14,8 +14,8 @@ private:
 public:
     MovingAverageFilter();
     void init(uint16_t number);
-    void init(float work_frequency, float cut_off_frequency) override;
-    void update(float value) override;
+    void init(float work_frequency, float cut_off_frequency);
+    void update(const float value) override;
     void reset();
 };
 
